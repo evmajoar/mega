@@ -1,0 +1,35 @@
+@import 'variables';
+@import 'mixins';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: $commonWidth;
+  margin: 0 auto;
+  padding: 0 $gutter;
+  width: 100%;
+}
+
+.has-error {
+  border-color: #EE442C !important;
+  svg path {
+    fill: #EE442C;
+  }
+}
+
+.workemail {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(0,0,0,0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}

@@ -1,0 +1,12 @@
+.idea/
+.vscode/
+
+build/
+node_modules/
+
+*.ai
+*.psd
+*.pdf
+*.log
+
+Thumbs.db

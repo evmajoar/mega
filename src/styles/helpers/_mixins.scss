@@ -1,0 +1,69 @@
+@import 'variables';
+
+@mixin pseudo ($content: '', $position: absolute, $display: block) {
+  content: $content;
+  position: $position;
+  display: $display;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin placeholderHidden {
+  &:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+  &:focus::-moz-placeholder {
+    color: transparent;
+  }
+  &:focus:-moz-placeholder {
+    color: transparent;
+  }
+  &:focus:-ms-input-placeholder {
+    color: transparent;
+  }
+}
+
+@mixin breakpoint($class) {
+  @if $class == el {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+  @else if $class == lg {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+  @else if $class == md {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  @else if $class == sm {
+    @media (min-width: 576px) {
+      @content;
+    }
+  }
+  @else if $class == s {
+    @media (min-width: 480px) {
+      @content;
+    }
+  }
+  @else {
+    @warn "Breakpoint mixin supports: el, lg, md, sm, s";
+  }
+}
+

@@ -1,0 +1,10 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+@font-face {
+    font-family: 'Oranienbaum';
+    font-display: swap;
+    src: local('Oranienbaum'), url($fontDir + 'oranienbaum/oranienbaum.woff2') format('woff2'), url($fontDir + 'oranienbaum/oranienbaum.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
