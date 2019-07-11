@@ -16,7 +16,9 @@
   }
 
   &-container {
+    position: relative;
     padding-top: 40px;
+    padding-bottom: 90px;
     background: url($imageDir + "facilities-bg-pseudo.png") top right no-repeat;
   }
 
@@ -40,6 +42,10 @@
   }
 
   &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     max-width: 256px;
     margin: 45px auto 0;
     background-color: #f4f4f4;
@@ -57,9 +63,11 @@
     font-weight: 500;
     font-size: 18px; 
     text-align: center;
-    font-family: $montserrat;   
+    font-family: $montserrat;
+    cursor: pointer;
+    transition: all .3s ease-out;     
     &:not(:last-of-type) {
-      border-bottom: 1px solid #1C4F95;
+     // border-bottom: 1px solid rgba(28,79,149,.5);
     }
 
     &::before {
@@ -83,22 +91,60 @@
       width: 160px;
       height: 4px;
       background-color: $teal;
+    } 
+
+    &:active {
+      position: relative;
+      z-index: 10;
+      //width: 290px;
+      //min-height: 290px;      
+      transform: scale(1.1);
+      background-color: $white;
+      border: none;
+      box-shadow: 0px 4px 60px rgba(19, 48, 88, 0.5);
+      & .facilities__sublist {
+        display: block;
+      }
     }    
   }
 
   &__sublist {
     display: none;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    font-weight: 500;
+    font-size: 14px;
+    color: $blueDark;
+    text-align: left;
+  }
+
+  &__subitem {
+    position: relative;
+    padding-left: 25px;
+    &:not(:first-of-type) {
+      margin-top: 15px;
+    }
+    &::before {
+      @include pseudo;
+      top: 3px;
+      left: 3px;
+      width: 7px;
+      height: 7px;
+      background-color: $blueDark;
+      transform: rotate(45deg);
+    }
   }
 
   &__subbutton {
     position: relative;
-    margin-top: 22px;
+    margin-top: auto;
     margin-left: auto;
     padding-right: 20px;
     font-weight: 500;
     font-size: 20px;
     font-family: $montserrat;
     color: $teal;
+    transition: all .3s ease-out;
     &::after {
       @include pseudo;
       top: 50%;
@@ -109,7 +155,27 @@
       border-top: 10px solid transparent;
       border-left: 15px solid $teal;
       border-bottom: 10px solid transparent;
+      transition: all .3s ease-out;
     }
+    &:active {
+      color: $purple;
+      &::after {
+        border-left: 15px solid $purple;
+      }
+    }    
+  }
+
+  &__button {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 100%;
+    max-width: 256px;
+    min-height: 82px;
+    padding: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    transform: translate(-50%, 50%);
   }
 
 
@@ -122,6 +188,27 @@
     &__form {
       margin-right: 0;
       padding: 40px 75px 48px;
+    }
+
+    &__list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      max-width: 620px;
+    }
+
+    &__item {
+      width: 50%;
+      margin: 0;
+      &:nth-child(odd) {
+       // border-right: 1px solid  rgba(28,79,149,.5);
+      }
+      &:nth-child(5) {
+        border-bottom: none;
+      }
+      &:active {
+        border: none;
+      }
     }
   }
 
@@ -136,11 +223,72 @@
     &__form {
       max-width: 500px;
     }
+
+    &__list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      max-width: 620px;
+    }
+
+    &__item {
+      min-height: 300px;
+      padding: 100px 48px 23px;
+      font-size: 20px;
+
+      &::before {
+        top: 23px;
+        left: 23px;
+        font-weight: 200;
+        font-size: 60px;
+      }
+      
+      &:hover,
+      &:focus {
+        position: relative;
+        z-index: 10;
+        transform: scale(1.1);
+        background-color: $white;
+        border: none;
+        box-shadow: 0px 4px 60px rgba(19, 48, 88, 0.5);
+        & .facilities__sublist {
+          display: block;
+        }
+      } 
+    }
+
+    &__sublist {
+      font-size: 16px;
+    }
+
+    &__subbutton {
+      &:hover,
+      &:focus {
+        color: $purple;
+        &::after {
+          border-left: 15px solid $purple;
+        }
+      }    
+    }
+
+    &__button {
+      font-size: 16px;
+      max-width: 325px;
+    }
   }
 
   @include breakpoint(lg) {
     &__form {
       padding: 60px 40px 60px 0;
+    }
+
+    &__list {
+      max-width: 100%;
+    }
+
+    &__item {
+      width: 33.33%;
+     // border-right: 1px solid  rgba(28,79,149,.5);
     }
   }
 
