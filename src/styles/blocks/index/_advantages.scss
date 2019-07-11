@@ -1,0 +1,69 @@
+@import '../../helpers/variables';
+@import '../../helpers/mixins';
+
+.advantages {
+  &__list {
+    position: relative;
+    margin-top: -80px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #333136;
+    background-color: #F7F6F6;
+    border-radius: 2px;
+    border: 1px solid #d3d3d3;
+  }
+  
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 35px 29px;
+    &:not(:last-of-type) {
+      border-bottom: 1px solid #d3d3d3;
+    }
+  }
+  
+  &__icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    margin-right: 23px;
+    fill: $blue;
+  }
+
+  @include breakpoint(sm) {
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 600px;
+      margin: -90px auto 0;
+    }
+    &__item {
+      width: 50%;
+      padding: 40px 20px 40px 30px;
+      &:nth-child(odd) {
+        border-right: 1px solid #d3d3d3;
+      }
+    }
+    &__icon {
+      margin-right: 30px;
+    }
+  }
+  @include breakpoint(el) {
+    &__list {
+      max-width: 1170px;
+      margin-top: -80px;
+    }
+    &__item {
+      width: 25%;
+      &:not(:last-of-type) {
+        border-bottom: none;
+        border-right: 1px solid #d3d3d3;
+      }
+    }
+  }
+}
+
+
+
+
