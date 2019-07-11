@@ -1,0 +1,76 @@
+@import '../../helpers/variables';
+@import '../../helpers/mixins';
+
+.examples-tasks{
+  padding: 47px 0 80px;
+  &__title{
+    margin-bottom: 12px;
+  }
+  &__description{
+    margin-bottom: 40px;
+    max-width: 230px;
+    font-size: 18px;
+    font-weight: 40px;
+    color: #333333;
+  }
+  &__subtitle{
+    @include text18;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    max-width: 230px;
+    text-align: center;
+    font-weight: 700;
+    color: $purpleDark;
+  }
+  &__picture{
+    margin: 0 auto;
+    margin-bottom: 25px;
+    max-width: 175px;
+  }
+  &__img{
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+  &__info-text{
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #737373;
+  }
+  &__link{
+    margin-bottom: 36px;
+  }
+  &__control{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__pagination-list{
+    margin: 0 25px;
+    display: flex;
+    align-items: flex-end;
+    font-family: $robotoCond;
+  }
+  &__pagination-item{
+    color: #686868;
+    font-size: 18px;
+    font-weight: normal;
+    &:not(:last-child){
+      padding-right: 8px;
+    }
+  }
+  &__pagination-item--active{
+    color: #000000;
+    font-size: 20px;
+  }
+  &__carousel-icon--reverse{
+    transform: rotate(-180deg);
+  }
+
+  @include breakpoint(md){
+    &__info-text{
+      font-size: 18px;
+    }
+  }
+}
