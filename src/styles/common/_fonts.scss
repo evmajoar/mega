@@ -1,7 +1,7 @@
 @import '../helpers/variables';
 @import '../helpers/mixins';
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Raleway:300,400,500,700|Roboto+Condensed:300,400,700&display=swap&subset=cyrillic');
+//@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Raleway:300,400,500,700|Roboto+Condensed:300,400,700&display=swap&subset=cyrillic');
 
 //@font-face {
 //    font-family: 'Oranienbaum';
@@ -10,3 +10,70 @@
 //    font-weight: 400;
 //    font-style: normal;
 //}
+
+
+@font-face {
+  font-family: 'Raleway';
+  font-display: swap;
+  src: local('Raleway-Regular'), url($fontDir + 'Raleway/Raleway-Regular.woff2') format('woff2'), url($fontDir + 'Raleway/Raleway-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-display: swap;
+  src: local('Raleway-Medium'), url($fontDir + 'Raleway/Raleway-Medium.woff2') format('woff2'), url($fontDir + 'Raleway/Raleway-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+  src: local('Montserrat-Medium'), url($fontDir + 'Montserrat/Montserrat-Medium.woff2') format('woff2'), url($fontDir + 'Montserrat/Montserrat-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+  src: local('Montserrat-SemiBold'), url($fontDir + 'Montserrat/Montserrat-SemiBold.woff2') format('woff2'), url($fontDir + 'Montserrat/Montserrat-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+  src: local('Montserrat-Bold'), url($fontDir + 'Montserrat/Montserrat-Bold.woff2') format('woff2'), url($fontDir + 'Montserrat/Montserrat-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+  src: local('Montserrat-ExtraBold'), url($fontDir + 'Montserrat/Montserrat-ExtraBold.woff2') format('woff2'), url($fontDir + 'Montserrat/Montserrat-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RobotoCondensed';
+  font-display: swap;
+  src: local('RobotoCondensed-Light'), url($fontDir + 'RobotoCondensed/RobotoCondensed-Light.woff2') format('woff2'), url($fontDir + 'RobotoCondensed/RobotoCondensed-Light.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RobotoCondensed';
+  font-display: swap;
+  src: local('RobotoCondensed-Regular'), url($fontDir + 'RobotoCondensed/RobotoCondensed-Regular.woff2') format('woff2'), url($fontDir + 'RobotoCondensed/RobotoCondensed-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+

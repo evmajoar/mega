@@ -1,43 +1,62 @@
 <header class="main-header">
-    <div class="container">
-        <nav class="main-header__nav main-nav">
-            <ul class="main-nav__list">
-                <li class="main-nav__item">
-                    <span class="main-nav__no-link main-nav__logo logo">
-                        <img src="images/logo.svg" alt="Логотип компании Мега">
-                    </span>
-                </li>
-                <li class="main-nav__item">
-                    <a href="mailto:info@mega.com" class="main-nav__link main-nav__link--email">
-                        <svg class="main-nav__icon-email icon-email" width="15" height="15" viewBox="0 0 15 15">
-                            <use xlink:href="icons/sprite.svg#icon-email"></use>
-                        </svg>
-                        info@mega.com
-                    </a>
-                </li>
-                <li class="main-nav__item">
-                    <a href="tel:+70000000000" class="main-nav__link main-nav__link--phone">
-                        <svg class="main-nav__icon-phone icon-phone" width="15" height="15" viewBox="0 0 15 15">
-                            <use xlink:href="icons/sprite.svg#icon-phone"></use>
-                        </svg>
-                        +7 (000) 000 00 00
-                    </a>
-                </li>
-                <li class="main-nav__item">
-                    <button class="main-nav__button button js-popup" type="button">Обратный звонок</button>
-                </li>
-            </ul>
-        </nav>
-        <section class="main-header__info">
-            <h1 class="main-header__info-hidden-title visually-hidden">MEGA integrator — система автоматизации управленческого учета и отчетности</h1>
-            <p class="main-header__info-title">Хотите настроить управленческий учёт?</p>
-            <p class="main-header__info-text">MEGA integrator — система автоматизации управленческого учета и отчетности, система контроля за всеми финансовыми потоками вашей организации</p>
-            <ul class="main-header__info-list">
-                <li class="main-header__info-item">Быстрый и простой учет финансовых средств вашей компании</li>
-                <li class="main-header__info-item">Актуальная и полная картина движения финансовых и материальных активов вашей компании</li>
-                <li class="main-header__info-item">Главный помощник финансового</li>
-            </ul>
-            <button class="main-header__info-button button js-popup">Начать</button>
-        </section>
-    </div>
+  <div class="container">
+    <nav class="main-header__nav main-nav">
+      <ul class="main-nav__list">
+        <li class="main-nav__item main-nav__item--logo">
+          <span class="main-nav__no-link main-nav__logo logo">
+            <img src="images/logo.svg" alt="Логотип компании Мега">
+          </span>
+        </li>
+        <li class="main-nav__item main-nav__item--email">
+          <a class="main-nav__link main-nav__link--email" href="mailto:info@mega.com">
+            <svg class="main-nav__icon main-nav__icon--email icon-email" width="15" height="15" viewBox="0 0 15 15">
+              <use xlink:href="icons/sprite.svg#icon-email"></use>
+            </svg>
+            info@mega.com
+          </a>
+        </li>
+        <li class="main-nav__item main-nav__item--phone">
+          <a class="main-nav__link main-nav__link--phone" href="tel:+70000000000">
+            <svg class="main-nav__icon main-nav__icon--phone icon-phone" width="15" height="15" viewBox="0 0 15 15">
+              <use xlink:href="icons/sprite.svg#icon-phone"></use>
+            </svg>
+            +7 (000) 000 00 00
+          </a>
+          <button class="main-nav__button button js-popup" type="button">
+            <span class="button__helper"></span>
+            Обратный звонок
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <section class="main-header__info">
+      <h1 class="main-header__info-hidden-title visually-hidden">MEGA integrator — система автоматизации управленческого учета и отчетности</h1>
+      <p class="main-header__info-title">Хотите настроить управленческий учёт?</p>
+      <p class="main-header__info-text">MEGA integrator — система автоматизации управленческого учета и отчетности, система контроля за всеми финансовыми потоками вашей организации</p>
+      <ul class="main-header__info-list">
+        <li class="main-header__info-item">
+          <svg class="main-header__info-icon" width="40" height="40" viewBox="0 0 40 40">
+            <use xlink:href="icons/sprite.svg#icon-calculator"></use>
+          </svg>
+          Быстрый и простой учет финансовых средств вашей компании
+        </li>
+        <li class="main-header__info-item">
+          <svg class="main-header__info-icon" width="40" height="40" viewBox="0 0 40 40">
+            <use xlink:href="icons/sprite.svg#icon-analysis"></use>
+          </svg>        
+          Актуальная и полная картина движения финансовых и&nbsp;материальных активов вашей компании
+        </li>
+        <li class="main-header__info-item">
+          <svg class="main-header__info-icon" width="40" height="40" viewBox="0 0 40 40">
+            <use xlink:href="icons/sprite.svg#icon-handshake"></use>
+          </svg>
+          Главный помощник финансового директора
+        </li>
+      </ul>
+      <button class="main-header__info-button button js-popup">
+        <span class="button__helper"></span>
+        Начать
+      </button>
+    </section>
+  </div>
 </header>

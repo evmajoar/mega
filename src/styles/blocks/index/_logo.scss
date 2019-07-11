@@ -4,10 +4,15 @@
 .logo {
   width: 75px;
   height: 80px;
+  margin: 0 auto;
 
   img {
     width: 100%;
     height: auto;
   }
 
+  @include breakpoint(sm) {
+    width: 106px;
+    height: 113px;
+  }
 }
