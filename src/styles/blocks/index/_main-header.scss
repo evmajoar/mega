@@ -1,16 +1,134 @@
 @import '../../helpers/variables';
 @import '../../helpers/mixins';
 
-.main-header {
-  background: $purpleDark url($imageDir + 'header-bg.jpg') center no-repeat;
+.main-header {  
   padding-top: 30px;
+  padding-bottom: 150px;
   color: $white;
   text-align: center;
+  background: $purpleDark url($imageDir + 'header-bg.jpg') center no-repeat;
+  background-size: cover;
 
-  &__info-title {
-    font-size: 25px;
-    font-weight: 900;
-    font-family: $montserrat;
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35px;
+
+    &-title {
+      max-width: 436px;
+      font-weight: 800;
+      font-size: 25px;
+      line-height: 30px;
+      font-family: $montserrat;
+      color: $white;
+    }
+    &-text {
+      max-width: 436px;
+      margin-top: 15px;
+      color: $teal;
+    }
+    &-list {
+      max-width: 200px;
+      margin: 60px auto 0;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 15px;
+    }
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &:not(:first-of-type) {
+        margin-top: 40px;
+      }
+    }    
+    &-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
+      fill: $teal;
+    }
+    &-button {
+      margin-top: 50px;
+      min-width: 176px;
+      min-height: 54px;
+      font-size: 20px;
+      line-height: 27px;
+      text-transform: uppercase;
+    }
   }
 
+  @include breakpoint(sm) {
+    padding-top: 50px;
+
+    &__info {
+      &-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 800px;
+        width: 100%;
+        margin-top: 55px;
+        line-height: 20px;
+      }
+      &-item {
+        width: calc((100% - 80px)/3);
+        max-width: 200px;
+        &:not(:first-of-type) {
+          margin-top: 0;
+        }
+      }
+      &-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  @include breakpoint(md) {
+    background-image:  url($imageDir + 'header-bg-768.jpg');
+
+    &__info {
+      margin-top: 55px;
+
+      &-title {
+        max-width: 610px;
+        font-size: 48px;
+        line-height: 48px;
+      }
+      &-text {
+        max-width:  590px;
+        margin-top: 30px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  @include breakpoint(el) {
+    padding-bottom: 120px;
+    background-image:  url($imageDir + 'header-bg-1920.jpg');
+
+    &__info {
+      &-title {
+        max-width: 700px;
+        font-size: 55px;
+        line-height: 50px;
+      }
+      &-text {
+        max-width:  575px;
+        margin-top: 20px;
+      }
+      &-list {
+        margin-top: 40px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+      &-button {
+        margin-top: 40px;
+      }
+    }
+
+  }
 }
