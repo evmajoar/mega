@@ -15,6 +15,11 @@
     z-index: -2; 
   }
 
+  &-container {
+    padding-top: 40px;
+    background: url($imageDir + "facilities-bg-pseudo.png") top right no-repeat;
+  }
+
   &__form-wrapper {
     width: 100%;
     max-width: 1000px;
@@ -27,6 +32,7 @@
     padding: 28px 19px 46px;
     background-color: #F7F6F6;
     border: 1px solid #d3d3d3;
+    
   }
 
   @include breakpoint(sm) {
@@ -42,6 +48,10 @@
   }
 
   @include breakpoint(md) {
+    &-container {
+      padding-top: 55px;
+      background-image: url($imageDir + "facilities-bg-pseudo-768.png");
+    }
     &::before {
       background-image: url($imageDir + "facilities-bg-768.png");
     }
@@ -57,6 +67,10 @@
   }
 
   @include breakpoint(el) {
+    &-container {
+      padding-top: 65px;
+      background-image: url($imageDir + "facilities-bg-pseudo-1920.png");
+    }
     &::before {
       background-image: url($imageDir + "facilities-bg-1920.png");
     }
