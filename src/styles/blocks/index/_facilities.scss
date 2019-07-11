@@ -1,0 +1,64 @@
+@import '../../helpers/variables';
+@import '../../helpers/mixins';
+
+
+.facilities {
+  position: relative;
+  &::before {
+    @include pseudo;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url($imageDir + "facilities-bg.png") no-repeat;
+    background-size: cover;
+    z-index: -2; 
+  }
+
+  &__form-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  &__form {
+    max-width: 474px;
+    margin: 0 auto;
+    padding: 28px 19px 46px;
+    background-color: #F7F6F6;
+    border: 1px solid #d3d3d3;
+  }
+
+  @include breakpoint(sm) {
+    &__form-wrapper {
+      background: $blue url($imageDir + "facilities-form-bg.jpg") repeat;
+      background-size: contain;
+    }
+
+    &__form {
+      margin-right: 0;
+      padding: 40px 75px 48px;
+    }
+  }
+
+  @include breakpoint(md) {
+    &::before {
+      background-image: url($imageDir + "facilities-bg-768.png");
+    }
+    &__form {
+      max-width: 500px;
+    }
+  }
+
+  @include breakpoint(lg) {
+    &__form {
+      padding: 60px 40px 60px 0;
+    }
+  }
+
+  @include breakpoint(el) {
+    &::before {
+      background-image: url($imageDir + "facilities-bg-1920.png");
+    }
+  }
+}
