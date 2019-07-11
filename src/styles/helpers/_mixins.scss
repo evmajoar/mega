@@ -67,3 +67,13 @@
   }
 }
 
+
+@mixin text18 {
+  font-size: 18px;
+  @include breakpoint(md) {
+    font-size: 24px;
+  }
+  @include breakpoint(el) {
+    font-size: 30px;
+  }
+}
