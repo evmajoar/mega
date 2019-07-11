@@ -1,31 +1,30 @@
 'use strict';
 
-const gulp = require( 'gulp' );
-const posthtml = require( 'gulp-posthtml' );
-const include = require( 'posthtml-include' );
-const scss = require( 'gulp-sass' );
-const sourcemaps = require( 'gulp-sourcemaps' );
-const autoprefixer = require( 'gulp-autoprefixer' );
-const csscomb = require( 'gulp-csscomb' );
-const csso = require( 'gulp-csso' );
-const criticalCss = require( 'gulp-critical-css' );
-const imagemin = require( 'gulp-imagemin' );
-const imageminMozjpeg = require( 'imagemin-mozjpeg' );
-const webp = require( 'imagemin-webp' );
-const svgSprite = require( 'gulp-svg-sprite' );
-const svgMinify = require( 'gulp-svgmin' );
-const ttf2woff = require( 'gulp-ttf2woff' );
-const ttf2woff2 = require( 'gulp-ttf2woff2' );
-const plumber = require( 'gulp-plumber' );
-const debug = require( 'gulp-debug' );
-const notify = require( 'gulp-notify' );
-const rename = require( 'gulp-rename' );
-const newer = require( 'gulp-newer' );
-const uglify = require( 'gulp-uglify' );
-const concat = require( 'gulp-concat' );
-const gulpIf = require( 'gulp-if' );
-const del = require( 'del' );
-const browserSync = require( 'browser-sync' ).create();
+const gulp = require( 'gulp' ),
+  posthtml = require( 'gulp-posthtml' ),
+  include = require( 'posthtml-include' ),
+  scss = require( 'gulp-sass' ),
+  autoprefixer = require( 'gulp-autoprefixer' ),
+  csscomb = require( 'gulp-csscomb' ),
+  csso = require( 'gulp-csso' ),
+  imagemin = require( 'gulp-imagemin' ),
+  imageminMozjpeg = require( 'imagemin-mozjpeg' ),
+  webp = require( 'imagemin-webp' ),
+  svgSprite = require( 'gulp-svg-sprite' ),
+  svgMinify = require( 'gulp-svgmin' ),
+  ttf2woff = require( 'gulp-ttf2woff' ),
+  ttf2woff2 = require( 'gulp-ttf2woff2' ),
+  plumber = require( 'gulp-plumber' ),
+  notify = require( 'gulp-notify' ),
+  rename = require( 'gulp-rename' ),
+  newer = require( 'gulp-newer' ),
+  uglify = require( 'gulp-uglify' ),
+  concat = require( 'gulp-concat' ),
+  gulpIf = require( 'gulp-if' ),
+  cheerio = require ( 'gulp-cheerio' ),
+  replace = require ( 'gulp-replace' ),
+  del = require( 'del' ),
+  browserSync = require( 'browser-sync' ).create();
 
 const root = {
   src: 'src/',
@@ -34,31 +33,22 @@ const root = {
 
 const path = {
   src: {
-    php: root.src + '*.php',
     html: root.src + '*.html',
     css: root.src + '*.scss',
     js: root.src + 'scripts/**/*.js',
     img: root.src + 'images/',
     font: root.src + 'fonts/**/*.ttf',
     ico: root.src + 'icons/**/*.svg',
-    vid: root.src + 'video/**/*.mp4',
-    ven: root.src + 'vendor/**/*.js',
     theme: root.src + 'theme/*.*',
   },
   build: {
-    php: root.build,
     html: root.build,
     css: root.build + 'styles/',
     js: root.build + 'scripts/',
-    img: root.build + 'images/',
     font: root.build + 'fonts/',
-    ico: root.build + 'icons/',
-    vid: root.build + 'videos/',
-    ven: root.build + 'vendor/',
-    theme: root.build + 'theme/',
+    img: root.build + 'images/'
   },
   watch: {
-    php: root.src + '*.php',
     html: [
       root.src + 'markup/**/*.html',
       root.src + '*.html'
@@ -69,39 +59,21 @@ const path = {
       root.src + 'styles/helpers/**/*.scss'
     ],
     js: root.src + 'scripts/**/*.js',
-    img: root.src + 'images/',
     font: root.src + 'fonts/**/*.ttf',
-    ico: root.src + 'icons/**/*.svg',
-    vid: root.src + 'video/**/*.mp4',
-    ven: root.src + 'vendor/**/*.js'
+    img: root.src + 'images/',
+    ico: root.src + 'icons/**/*.svg'
   }
 };
 
 
-// CLEAN ============================
-
+/* CLEAN DIRECTORY */
 function cleanDirectory() {
-
   return del(['build']);
-
 }
 
 
-// PHP ============================
-
-function compilePHP() {
-
-  return gulp.src( path.src.php )
-    .pipe( gulp.dest( path.build.php ) )
-    .pipe( browserSync.stream() );
-
-}
-
-
-// HTML ============================
-
+/* COMPILE HTML */
 function compileHTML() {
-
   return gulp.src( path.src.html )
     .pipe( plumber( {
       errorHandler: notify.onError( {
@@ -114,14 +86,11 @@ function compileHTML() {
     ]) )
     .pipe( gulp.dest( path.build.html ) )
     .pipe( browserSync.stream() );
-
 }
 
 
-// CSS ============================
-
+/* COMPILE CSS */
 function compileCSS() {
-
   return gulp.src( path.src.css )
     .pipe( plumber( {
       errorHandler: notify.onError( {
@@ -142,14 +111,11 @@ function compileCSS() {
     } ) )
     .pipe( gulp.dest( path.build.css ) )
     .pipe( browserSync.stream() );
-
 }
 
 
-// JS ============================
-
+/* COMPILE JAVASCRIPT */
 function compileJS() {
-
   return gulp.src( path.src.js )
     .pipe( plumber( {
       errorHandler: notify.onError( {
@@ -164,46 +130,29 @@ function compileJS() {
     }) )
     .pipe( gulp.dest( path.build.js ) )
     .pipe( browserSync.stream() );
-
-}
-
-function assemblyVendor() {
-
-  return gulp.src( path.src.ven )
-    .pipe(newer( path.build.ven ) )
-    .pipe(gulp.dest( path.build.ven ) )
-    .pipe( browserSync.stream() );
-
 }
 
 
-// FONT ============================
-
+/* CONVERT FONTS */
 function convertTTFtoWOFF() {
-
   return gulp.src( path.src.font )
     .pipe(newer( path.build.font ) )
     .pipe( ttf2woff() )
     .pipe( gulp.dest(path.build.font) )
     .pipe( browserSync.stream() );
-
 }
 
 function convertTTFtoWOFF2() {
-
   return gulp.src( path.src.font )
     .pipe( newer( path.build.font ) )
     .pipe( ttf2woff2() )
     .pipe( gulp.dest( path.build.font ) )
     .pipe( browserSync.stream() );
-
 }
 
 
-// IMG ============================
-
+/* OPTIMIZE IMAGES AND CONVERT TO WEBP */
 function optimizeImages() {
-
   return gulp.src( path.src.img + '**/*.{jpg,png,svg}' )
     .pipe( newer( path.build.img ) )
     .pipe( imagemin([
@@ -213,7 +162,7 @@ function optimizeImages() {
           {removeViewBox: false},
           {removeTitle: true},
           {cleanupNumericValues:
-                {floatPrecision: 0}
+            {floatPrecision: 0}
           }
         ]
       } ),
@@ -223,11 +172,9 @@ function optimizeImages() {
     ] ) )
     .pipe( gulp.dest( path.build.img) )
     .pipe( browserSync.stream() );
-
 }
 
 function convertImagesToWebp() {
-
   return gulp.src( path.src.img + '**/*.{jpg,png}' )
     .pipe( newer( path.build.img ) )
     .pipe( imagemin([
@@ -240,88 +187,66 @@ function convertImagesToWebp() {
     } ) )
     .pipe( gulp.dest( path.build.img ) )
     .pipe( browserSync.stream() );
-
 }
 
 
-// ICO ============================
-
+/* CREATE SVG SPRITE */
 function assemblySvgSprites() {
-
   return gulp.src( path.src.ico )
-    .pipe( svgMinify() )
-    .pipe( gulp.dest( path.build.ico ) )
+    .pipe( svgMinify( {
+      js2svg: {
+        pretty: true
+      }
+    } ) )
+    .pipe( cheerio({
+      run: function ($) {
+        $('[fill]').removeAttr('fill');
+        $('[stroke]').removeAttr('stroke');
+        $('[style]').removeAttr('style');
+      },
+      parserOptions: { xmlMode: true }
+    } ) )
+    .pipe( replace('&gt;', '>') )
     .pipe( svgSprite({
       mode: {
-        css: {
+        symbol: {
           dest: '.',
           bust: false,
-          sprite: '../icons/sprite.svg',
-          layout: 'vertical',
+          sprite: "../icons/sprite.svg",
           prefix: '%-svg-',
           dimensions: true,
           render: {
             scss: {
-              dest: '_sprite.scss'
+              dest:'_sprite.scss'
             }
           }
         }
       }
-    }))
-    .pipe( gulpIf( '*.scss', gulp.dest( root.src + 'styles/helpers'), gulp.dest( path.build.ico ) ) )
+    } ) )
+    .pipe( gulpIf( '*.scss', gulp.dest( root.src + 'styles/helpers'), gulp.dest( path.build.img ) ) )
     .pipe( browserSync.stream() );
-
 }
 
 
-// VIDEO ============================
-
-function optimizeVideos() {
-
-  return gulp.src( path.src.vid )
-    .pipe( newer( path.build.vid ) )
-    .pipe( gulp.dest( path.build.vid ) )
-    .pipe( browserSync.stream());
-
-}
-
-// THEME ============================
-
-function assemblyTheme() {
-
-  return gulp.src( path.src.theme )
-      .pipe( gulp.dest( path.build.theme ) )
-      .pipe( browserSync.stream() );
-
-}
-
-
-// BUILD ============================
-
+/* RUN BUILD */
 exports.cleanDirectory = cleanDirectory;
 
 const build = gulp.series(cleanDirectory, gulp.parallel(
-  compilePHP,
   compileHTML,
   compileCSS,
   compileJS,
-  assemblyVendor,
   convertTTFtoWOFF,
   convertTTFtoWOFF2,
   optimizeImages,
   convertImagesToWebp,
   assemblySvgSprites,
-  optimizeVideos,
-  assemblyTheme
 ));
 
 exports.build = build;
 
 
-// SERVER ============================
-
+/* RUN LIVE SERVER */
 function runServer() {
-
   browserSync.init( {
     server: root.build,
     cors: true,
@@ -329,27 +254,21 @@ function runServer() {
   } );
 
   browserSync.watch( root.src + '**/*.*' ).on( 'change', browserSync.reload );
-
 }
 
 
-// WATCH ============================
-
+/* RUN WATCHER */
 function watchFiles() {
-  gulp.watch( path.watch.php, compilePHP );
   gulp.watch( path.watch.html, compileHTML );
   gulp.watch( path.watch.css, compileCSS );
   gulp.watch( path.watch.js, compileJS );
-  gulp.watch( path.watch.ven, assemblyVendor );
   gulp.watch( path.watch.font, convertTTFtoWOFF );
   gulp.watch( path.watch.font, convertTTFtoWOFF2 );
   gulp.watch( path.watch.img + '**/*.{jpg,png,svg}', optimizeImages );
   gulp.watch( path.watch.img + '**/*.{jpg,png}', convertImagesToWebp );
   gulp.watch( path.watch.ico, assemblySvgSprites );
-  gulp.watch( path.watch.vid, optimizeVideos );
 }
 
 
-// DEVELOPMENT ============================
-
+/* DEVELOPMENT */
 exports.development = gulp.series( build, gulp.parallel( runServer, watchFiles ) );

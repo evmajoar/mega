@@ -1,52 +1,54 @@
-%svg-common {
-	background: url("../icons/sprite.svg") no-repeat;
+%-svg-icon-analysis-dims {
+	width: 50px;
+	height: 50px;
 }
 
-%-svg-icon-dog {
-	@extend %svg-common;
-	background-position: 0 0;
+%-svg-icon-calculator-dims {
+	width: 50px;
+	height: 50px;
+}
+
+%-svg-icon-dog-dims {
 	width: 18px;
 	height: 18px;
 }
 
-%-svg-icon-fb {
-	@extend %svg-common;
-	background-position: 0 11.25%;
+%-svg-icon-email-dims {
+	width: 15px;
+	height: 15px;
+}
+
+%-svg-icon-fb-dims {
 	width: 10px;
 	height: 18px;
 }
 
-%-svg-icon-ig {
-	@extend %svg-common;
-	background-position: 0 22.5%;
+%-svg-icon-handshake-dims {
+	width: 50px;
+	height: 50px;
+}
+
+%-svg-icon-ig-dims {
 	width: 18px;
 	height: 18px;
 }
 
-%-svg-icon-phone {
-	@extend %svg-common;
-	background-position: 0 33.75%;
+%-svg-icon-phone-dims {
 	width: 18px;
 	height: 18px;
 }
 
-%-svg-icon-upload {
-	@extend %svg-common;
-	background-position: 0 53.333333333333336%;
+%-svg-icon-upload-dims {
 	width: 45px;
 	height: 43px;
 }
 
-%-svg-icon-usb {
-	@extend %svg-common;
-	background-position: 0 86.46616541353383%;
+%-svg-icon-usb-dims {
 	width: 45px;
 	height: 45px;
 }
 
-%-svg-icon-user {
-	@extend %svg-common;
-	background-position: 0 100%;
+%-svg-icon-user-dims {
 	width: 18px;
 	height: 18px;
 }

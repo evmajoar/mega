@@ -22,7 +22,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  font: 400 18px/1.2;
+  font: 400 16px/1.2 $raleway;
   color: $black;
   background: $white;
   text-rendering: optimizeLegibility;

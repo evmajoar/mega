@@ -1,17 +1,27 @@
 <header class="main-header">
     <div class="container">
-        <nav class="main-nav">
+        <nav class="main-header__nav main-nav">
             <ul class="main-nav__list">
                 <li class="main-nav__item">
-                    <span class="main-nav__no-link logo">
+                    <span class="main-nav__no-link main-nav__logo logo">
                         <img src="images/logo.svg" alt="Логотип компании Мега">
                     </span>
                 </li>
                 <li class="main-nav__item">
-                    <a href="mailto:info@mega.com" class="main-nav__link">info@mega.com</a>
+                    <a href="mailto:info@mega.com" class="main-nav__link main-nav__link--email">
+                        <svg class="main-nav__icon-email icon-email" width="15" height="15" viewBox="0 0 15 15">
+                            <use xlink:href="icons/sprite.svg#icon-email"></use>
+                        </svg>
+                        info@mega.com
+                    </a>
                 </li>
                 <li class="main-nav__item">
-                    <a href="tel:+70000000000" class="main-nav__link">+7 (000) 000 00 00</a>
+                    <a href="tel:+70000000000" class="main-nav__link main-nav__link--phone">
+                        <svg class="main-nav__icon-phone icon-phone" width="15" height="15" viewBox="0 0 15 15">
+                            <use xlink:href="icons/sprite.svg#icon-phone"></use>
+                        </svg>
+                        +7 (000) 000 00 00
+                    </a>
                 </li>
                 <li class="main-nav__item">
                     <button class="main-nav__button button js-popup" type="button">Обратный звонок</button>

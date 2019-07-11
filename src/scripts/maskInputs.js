@@ -1,5 +1,5 @@
-var $tel = $( 'input[type="tel"]' );
+var $phones = $( 'input[type="tel"]' );
 
-if ( $tel.length ) {
-    $tel.mask("+7 (999) 999-99-99");
+if ( $phones.length ) {
+    $phones.mask("+7 (999) 999-99-99");
 }

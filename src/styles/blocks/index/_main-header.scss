@@ -1,2 +1,16 @@
 @import '../../helpers/variables';
 @import '../../helpers/mixins';
+
+.main-header {
+  background: $purpleDark url($imageDir + 'header-bg.jpg') center no-repeat;
+  padding-top: 30px;
+  color: $white;
+  text-align: center;
+
+  &__info-title {
+    font-size: 25px;
+    font-weight: 900;
+    font-family: $montserrat;
+  }
+
+}
