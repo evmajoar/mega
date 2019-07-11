@@ -10,6 +10,15 @@
   width: 100%;
 }
 
+.title {
+  font-weight: 800;
+  font-size: 25px;
+  font-family: $montserrat;
+  @include breakpoint(md) {
+    font-size: 48px;
+  }
+}
+
 .button {
   position: relative;
   display: flex;

@@ -31,9 +31,87 @@
     margin: 0 auto;
     padding: 28px 19px 46px;
     background-color: #F7F6F6;
-    border: 1px solid #d3d3d3;
-    
+    border: 1px solid #d3d3d3;    
   }
+
+  &__title {
+    margin-top: 54px;
+    color: $white;
+  }
+
+  &__list {
+    max-width: 256px;
+    margin: 45px auto 0;
+    background-color: #f4f4f4;
+    counter-reset: number;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 235px;
+    padding: 70px 30px 22px;
+    font-weight: 500;
+    font-size: 18px; 
+    text-align: center;
+    font-family: $montserrat;   
+    &:not(:last-of-type) {
+      border-bottom: 1px solid #1C4F95;
+    }
+
+    &::before {
+      content: "0" counter(number);
+      counter-increment: number;
+      display: block;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-weight: 200;
+      font-size: 40px;
+      font-family: $robotoCond;
+      color: rgba(115,115,115,.5);
+    }
+
+    &::after {
+      @include pseudo;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 160px;
+      height: 4px;
+      background-color: $teal;
+    }    
+  }
+
+  &__sublist {
+    display: none;
+  }
+
+  &__subbutton {
+    position: relative;
+    margin-top: 22px;
+    margin-left: auto;
+    padding-right: 20px;
+    font-weight: 500;
+    font-size: 20px;
+    font-family: $montserrat;
+    color: $teal;
+    &::after {
+      @include pseudo;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 0; 
+      height: 0;
+      border-top: 10px solid transparent;
+      border-left: 15px solid $teal;
+      border-bottom: 10px solid transparent;
+    }
+  }
+
 
   @include breakpoint(sm) {
     &__form-wrapper {
