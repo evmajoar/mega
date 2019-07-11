@@ -1,0 +1,110 @@
+@import '../../helpers/variables';
+@import '../../helpers/mixins';
+
+
+.subscribe {
+  padding-top: 40px;
+  padding-bottom: 53px;
+  background: #F7F6F6 url($imageDir + "subscribe-bg.jpg") repeat repeat;
+  background-size: contain;
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  &__text {
+    max-width: 560px;
+    margin: 12px auto 0;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  &__wrapper {
+    margin: 40px auto 0;
+  }
+
+  &__action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;    
+    font-weight: 600;
+    font-size: 14px;
+    font-family: $montserrat;
+    color: $blue;
+  }
+
+  &__percent {
+    font-weight: 700;
+    font-size: 40px;
+    margin-left: 40px;
+  }
+
+  &__form {
+    max-width: 482px;
+    margin: 28px auto 0;
+  }
+
+  @include breakpoint(sm) {
+    padding-top: 60px;
+    padding-bottom: 50px;
+    &__form {
+      position: relative;
+      min-width: 482px;
+    }
+
+    &__title {
+      font-size: 30px;
+    }
+
+    &__text {
+      margin-top: 15px;
+      font-size: 24px;
+    }
+
+    &__action {
+      font-size: 20px;
+    }
+
+    &__percent {
+      font-size: 45px;
+    }
+  }
+
+  @include breakpoint(lg) {
+    padding: 66px 0;
+    &__container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    &__text-wrapper {
+      width: calc(100% - 560px);
+      margin-left: 0;
+      margin-right: auto;      
+    }
+
+    &__title,
+    &__text {
+      text-align: left;
+      margin-left: 0;
+    }
+    
+    &__wrapper {
+      max-width: 500px;
+      margin-top: 0;
+      margin-left: 40px;
+      margin-right: 0;
+    }
+
+    &__action {
+      margin-left: 0;
+    }
+
+  }
+}
