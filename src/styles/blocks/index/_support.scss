@@ -1,0 +1,91 @@
+@import '../../helpers/variables';
+@import '../../helpers/mixins';
+
+
+.support {
+  padding-top: 60px;
+  padding-bottom: 66px;
+  background-color: $white;
+  background: url($imageDir + "support-bg.jpg") top 140px center no-repeat;
+  background-size: cover;
+  
+  &__title {
+    font-size: 20px; 
+    line-height: 100%;
+    text-align: center;
+  }
+
+  &__text {
+    margin-top: 12px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  &__list {
+    position: relative;
+    margin-top: 22px;
+    padding-top: 280px;
+    &::before {
+      @include pseudo;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 220px;
+      height: 258px;
+      background: url($imageDir + "shield.png") no-repeat;
+    }
+  }
+
+  &__item {
+    max-width: 240px;
+    
+    &:not(:first-of-type) {
+      margin-top: 45px;
+    }
+    &:nth-child(odd) {
+      margin-left: auto;
+      text-align: right;
+    }
+    &-question {
+      display: flex;
+      margin-top: 20px;    
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 99.4%;
+      font-family: $montserrat;
+      color: $white;
+    }
+    &-text {
+      margin-top: 20px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      color: $white;
+    }
+    &-icon {
+      flex-shrink: 0;
+      fill: $teal;
+    }
+  }
+
+  @include breakpoint(md) {
+    &__title {
+      font-size: 48px;
+      max-width: 656px;
+    }
+
+    &__text {
+      margin-top: 20px;
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    &__list {
+      margin-top: 92px;
+    }
+
+    
+  }
+
+}
