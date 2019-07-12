@@ -4,11 +4,11 @@
 .free-test {
   padding: 45px 0;
 
-  @include breakpoint (sm) {
-    
+  @include breakpoint(md) {
+    padding: 55px 0;
   }
 
   @include breakpoint(md) {
-    padding: 55px 0;
+    padding: 82px 0;
   }
 }
