@@ -130,6 +130,7 @@
     }
 
     &__list {
+      justify-content: center;
       width: 100%;
       max-width: 100%;
       min-height: 300px;
@@ -162,8 +163,12 @@
       }
     }    
   }
-
+  
   @include breakpoint(lg) {
+    background: url($imageDir + "support-bg-1920.jpg") top -35px center no-repeat;
+  }
+
+  @include breakpoint(el) {   
     background: url($imageDir + "support-bg-1920.jpg") top -5px center no-repeat;
     &__list {
       justify-content: center;
