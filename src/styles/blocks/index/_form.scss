@@ -93,20 +93,31 @@
       min-height: 45px;
       max-width: 180px;
       margin-top: 22px;
-      @include breakpoint(sm) {
+    }
+    &--popup {
+      min-height: 40px;
+      max-width: 134px;
+      margin-top: 44px;
+    }     
+  }
+
+  @include breakpoint (sm) {
+    &__button {
+      max-width: 300px;
+      &--free-test {
+        max-width: 200px;
+      }
+      &--subscribe {
         max-width: 164px;        
         margin-top: 0;
         position: absolute;
         top: 0;
         right: 0;
       }
-    }    
-  }
-  @include breakpoint (sm) {
-    &__button {
-      max-width: 300px;
-      &--free-test {
-        max-width: 200px;
+      &--popup {
+        max-width: 182px;
+        min-height: 54px;
+        margin-top: 30px;
       }
     }
   }
@@ -126,11 +137,18 @@
       font-size: 14px;
       &--subscribe {
         max-width: 180px;
-        margin-top: 22px;
-        @include breakpoint(sm) {
-          margin-top: 0;
-        }
-      }  
+        margin-top: 0;
+      }
+    }
+  }
+
+  @include breakpoint(lg) {
+    &__button {
+      &--popup {
+        max-width: 190px;
+        min-height: 54px;
+        margin-top: 35px;
+      }
     }
   }
 

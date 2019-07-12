@@ -1,0 +1,60 @@
+<section class="modal modal--"> <!--модификатор opened - открывает попап-->
+  <div class="modal__popup popup-request popup-request--"> <!--модификатор opened - открывает попап-->
+    <span class="popup-request__logo">
+      <img class="popup-request__logo-image" src="images/logo-popup.svg" alt="Логотип компании Мега">
+    </span>
+    <form class="popup-request__form form" action="/" method="post">      
+      <ul class="form__list">
+        <li class="form__item">
+          <label class="form__label">
+            <svg class="form__icon" width="18" height="18" viewBox="0 0 18 18">
+              <use xlink:href="icons/sprite.svg#icon-user"></use>
+            </svg>
+            <span class="visually-hidden">Имя</span>            
+            <input class="form__input" type="text" name="name" placeholder="Имя">
+          </label>
+        </li>
+        <li class="form__item">
+          <label class="form__label">
+            <svg class="form__icon" width="18" height="18" viewBox="0 0 18 18">
+              <use xlink:href="icons/sprite.svg#icon-dog"></use>
+            </svg>
+            <span class="visually-hidden">Email</span>            
+            <input class="form__input" type="email" name="email" placeholder="Email">
+          </label>
+        </li>
+        <li class="form__item">
+          <label class="form__label">
+            <svg class="form__icon" width="18" height="18" viewBox="0 0 18 18">
+              <use xlink:href="icons/sprite.svg#icon-phone"></use>
+            </svg>
+            <span class="visually-hidden">Номер</span>            
+            <input class="form__input" type="tel" name="phone-number" placeholder="Номер">
+          </label>            
+        </li>
+      </ul>
+      <button class="form__button form__button--popup button" type="submit">
+        <span class="button__helper"></span>
+        Отправить
+      </button>
+    </form>
+    <button class="popup-request__close-button" type="button"><span class="visually-hidden">Закрыть окно</span></button>
+  </div>
+  <div class="modal__popup popup-mailing-thx popup-mailing-thx--"> <!--модификатор opened - открывает попап-->
+    <span class="popup-mailing-thx__logo">
+      <img class="popup-mailing-thx__logo-image" src="images/logo-popup.svg" alt="Логотип компании Мега">
+    </span>
+    <p class="popup-mailing-thx__title">Спасибо!</p>
+    <p class="popup-mailing-thx__paragraph">Вы успешно подписаны на рассылку.</p>
+    <button class="popup-mailing-thx__close-button"><span class="visually-hidden">Закрыть окно</span></button>
+  </div>
+  <div class="modal__popup popup-thx popup-thx--"> <!--модификатор opened - открывает попап-->
+    <span class="popup-thx__logo">
+      <img class="popup-thx__logo-image" src="images/logo-popup.svg" alt="Логотип компании Мега">
+    </span>
+    <p class="popup-thx__title">Спасибо!</p>
+    <p class="popup-thx__paragraph">Скоро вам на&nbsp;почту придет ссылка и&nbsp;контактный номер нашей службы работы с&nbsp;клиентами!</p>
+    <button class="popup-thx__close-button"><span class="visually-hidden">Закрыть окно</span></button>
+  </div> 
+  <div class="modal__overlay"></div>
+</section>

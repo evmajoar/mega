@@ -1,0 +1,103 @@
+@import '../../helpers/variables';
+@import '../../helpers/mixins';
+
+
+.popup-mailing-thx {
+  display: none;
+  &--opened {
+    display: block;    
+  }  
+}
+
+.popup-mailing-thx {
+  &__logo {
+    display: block;
+    margin: 0 auto;
+  }
+  &__logo-image {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-top: 50px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    font-family: $montserrat;
+    text-align: center;
+  }
+
+  &__paragraph {
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    color: #737373;
+  }
+
+  &__close-button {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 25px;
+    height: 25px;
+    &::before,
+    &::after {
+      @include pseudo;
+      top: 12px;
+      right: -5px;
+      width: 34px;
+      height: 1px;
+      background-color: #888888;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+    &:active {
+      &::before,
+      &::after {
+        background-color: $teal;
+      }
+    }
+  }
+
+  @include breakpoint(md) {
+    &__logo {
+      width: 142px;
+      height: 150px;
+      
+      &-image {
+        width: 100%;
+      }
+    }
+    &__title {
+      margin-top: 35px;
+      font-size: 30px;
+    }
+    &__paragraph {
+      font-size: 24px;
+    }
+    &__close-button {
+      top: 35px;
+      right: 30px;
+      &:hover,
+      &:focus {
+        &::before,
+        &::after {
+          background-color: $teal;
+        }
+      }
+    }
+  }
+
+  @include breakpoint(lg) {
+    max-width: 626px;
+    &__title {
+      margin-top: 47px;
+    }
+  }
+}
