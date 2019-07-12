@@ -10,16 +10,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url($imageDir + "facilities-bg.png") no-repeat;
-    background-size: cover;
+    background-color: $blueDark;
+    background: radial-gradient(2930.43px at 117.76% 108.66%, #182848 0%, #4B6CB7 100%);
     z-index: -2; 
   }
 
   &-container {
     position: relative;
+    margin-top: -151px;
     padding-top: 40px;
     padding-bottom: 90px;
-    background: url($imageDir + "facilities-bg-pseudo.png") top right no-repeat;
   }
 
   &__form-wrapper {
@@ -214,11 +214,12 @@
 
   @include breakpoint(md) {
     &-container {
+      margin-top: -140px;
       padding-top: 55px;
-      background-image: url($imageDir + "facilities-bg-pseudo-768.png");
+      background: url($imageDir + "facilities-bg-pseudo-768.png") top right no-repeat;
     }
     &::before {
-      background-image: url($imageDir + "facilities-bg-768.png");
+      background: radial-gradient(2977.37px at 131.07% 72.02%, #182848 0%, #4B6CB7 100%);
     }
     &__form {
       max-width: 500px;
@@ -294,11 +295,12 @@
 
   @include breakpoint(el) {
     &-container {
+      margin-top: -256px;
       padding-top: 65px;
       background-image: url($imageDir + "facilities-bg-pseudo-1920.png");
     }
     &::before {
-      background-image: url($imageDir + "facilities-bg-1920.png");
+      background: radial-gradient(3149.37px at 116.07% 111.94%, #182848 0%, #4B6CB7 100%);
     }
   }
 }

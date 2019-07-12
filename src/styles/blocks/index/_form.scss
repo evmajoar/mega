@@ -15,6 +15,14 @@
     color: $purpleDark;    
   }
 
+  &__paragraph {
+    margin-top: 12px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    color: $purpleDark; 
+  }
+
   &__list {
     width: 100%;
     max-width: 300px;
@@ -77,7 +85,7 @@
   &__button {
     min-height: 54px;
     width: 100%;
-    max-width: 300px;
+    max-width: 200px;
     margin: 30px auto 0;
     font-size: 12px;
     text-transform: uppercase;
@@ -85,15 +93,33 @@
       min-height: 45px;
       max-width: 180px;
       margin-top: 22px;
-      @include breakpoint(sm) {
-        max-width: 164px;
-        
+    }
+    &--popup {
+      min-height: 40px;
+      max-width: 134px;
+      margin-top: 44px;
+    }     
+  }
+
+  @include breakpoint (sm) {
+    &__button {
+      max-width: 300px;
+      &--free-test {
+        max-width: 200px;
+      }
+      &--subscribe {
+        max-width: 164px;        
         margin-top: 0;
         position: absolute;
         top: 0;
         right: 0;
       }
-    }    
+      &--popup {
+        max-width: 182px;
+        min-height: 54px;
+        margin-top: 30px;
+      }
+    }
   }
 
   @include breakpoint(md) {
@@ -101,16 +127,28 @@
       font-size: 30px;
     }
 
-    &__button {
+    &__paragraph {
+      margin-top: 20px;
+      font-size: 24px;
+    }
+
+    &__button {      
       margin-top: 40px;
       font-size: 14px;
       &--subscribe {
         max-width: 180px;
-        margin-top: 22px;
-        @include breakpoint(sm) {
-          margin-top: 0;
-        }
-      }  
+        margin-top: 0;
+      }
+    }
+  }
+
+  @include breakpoint(lg) {
+    &__button {
+      &--popup {
+        max-width: 190px;
+        min-height: 54px;
+        margin-top: 35px;
+      }
     }
   }
 
@@ -118,6 +156,29 @@
     &__title {
       font-size: 36px;
     }
+    &__list {
+      &--free-test {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+    &__item {
+      &--free-test {        
+        width: calc((100% - 130px)/3);
+        max-width: 300px;
+        &:not(:first-of-type) {
+          margin-top: 0;  
+        }              
+      }
+    }
+    &__button {
+      &--free-test {
+        margin-top: 50px;
+      }
+    }
+    
   }
 
 }

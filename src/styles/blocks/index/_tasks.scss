@@ -6,15 +6,15 @@
   position: relative;
   margin-top: -502px;
   padding-top: 565px;
-  padding-bottom: 60px;  
+  padding-bottom: 210px;  
   &::before {
     @include pseudo;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url($imageDir + "tasks-bg.png") no-repeat;
-    background-size: cover;
+    background-color: $blue;
+    background: radial-gradient(1721.40px at 100% 1.86%, #3FC1F8 0%, #2468C5 100%);
     z-index: -1; 
   }
 
@@ -95,9 +95,9 @@
   @include breakpoint(md) {
     margin-top: -250px;
     padding-top: 300px;
-    padding-bottom: 87px;
+    padding-bottom: 222px;
     &::before {
-      background-image: url($imageDir + "tasks-bg-768.png");
+      background: radial-gradient(1487.07px at 100% 1.61%, #3FC1F8 0%, #2468C5 100%);
     }
     
     &__title {
@@ -146,7 +146,7 @@
   @include breakpoint(lg) {
     margin-top: -250px;
     padding-top: 300px;
-    padding-bottom: 93px;  
+    padding-bottom: 320px;  
 
     &__list {
       flex-direction: column;
@@ -160,7 +160,9 @@
   @include breakpoint(el) {
     margin-top: -90px;
     padding-top: 230px;
-    
+    &::before {
+      background: radial-gradient(2706.31px at 100% 3.03%, #3FC1F8 0%, #2468C5 100%);
+    }     
 
     &__wrapper {
       display: flex;
@@ -178,11 +180,5 @@
       margin-bottom: 95px;
       margin-right: 0;
     }
-  }
-
-  @media (min-width: 1750px) {
-    &::before {
-      background-image: url($imageDir + "tasks-bg-1920.png");
-    } 
   }
 }

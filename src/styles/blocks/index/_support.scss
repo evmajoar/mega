@@ -1,0 +1,203 @@
+@import '../../helpers/variables';
+@import '../../helpers/mixins';
+
+
+.support {
+  padding-top: 60px;
+  padding-bottom: 66px;
+  background-color: $white;
+  background: url($imageDir + "support-bg.jpg") top 160px center no-repeat;
+  
+  &__title {
+    max-width: 276px;
+    margin: 0 auto;
+    font-size: 20px; 
+    line-height: 100%;
+    text-align: center;
+  }
+
+  &__text {
+    max-width: 200px;
+    margin: 12px auto 0; 
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  &__list {
+    position: relative;
+    margin-top: 22px;
+    padding-top: 280px;
+    &::before {
+      @include pseudo;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 220px;
+      height: 258px;
+      background: url($imageDir + "shield.png") no-repeat;
+    }
+  }
+
+  &__item {
+    max-width: 240px;
+    
+    &--usb {
+      margin-top: 45px;
+    }
+    &--upload {
+      margin-left: auto;
+      text-align: right;
+    }
+    &-question {
+      display: flex;
+      margin-top: 20px;    
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 99.4%;
+      font-family: $montserrat;
+      color: $white;
+      &-text {
+        max-width: 180px;
+      }
+    }
+    &-text {
+      margin-top: 20px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      color: $white;
+    }
+    &-icon {
+      flex-shrink: 0;
+      fill: $teal;
+      &--upload {
+        margin-right: 15px;
+        margin-left: auto;
+      }
+      &--usb {
+        margin-left: 15px;
+        margin-right: auto;
+      }
+    }
+  }
+
+  @media(min-width: 321px) {
+    background: url($imageDir + "support-bg-321.jpg") top 45px center no-repeat;
+  }
+  @media(min-width: 403px) {
+    background: url($imageDir + "support-bg-321.jpg") top 50px center no-repeat;
+  }
+
+  @media(min-width: 577px) {    
+    
+    background: url($imageDir + "support-bg-576.jpg") top 30px center no-repeat;
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      max-width: 600px;
+      margin: 30px auto 0;
+    } 
+    &__item {
+      max-width: 100%;
+      width: calc((100% - 40px)/2);
+      &--upload {
+        margin-left: 0;
+        margin-right: auto;
+      }
+      &--usb {
+        margin-top: 0;
+        margin-right: 0;
+        margin-left: auto;
+      }
+    }   
+  }
+
+  @include breakpoint(md) {
+    padding-bottom: 158px;
+    background: url($imageDir + "support-bg-768.jpg") top 60px center no-repeat;
+    &__title {
+      font-size: 48px;
+      max-width: 656px;
+      margin: 0 auto;
+    }
+
+    &__text {
+      max-width: 500px;
+      margin-top: 20px;
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    &__list {
+      justify-content: center;
+      width: 100%;
+      max-width: 100%;
+      min-height: 300px;
+      margin-top: 92px;      
+      padding-top: 0;
+      &::before {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &__item {
+      width: calc((100% - 260px)/2);
+      max-width: 280px;
+      &--upload {
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: auto;
+      }
+      &--usb {
+        margin-top: auto;
+        margin-left: auto;
+        margin-bottom: 0;
+      }
+      &-question,
+      &-text {
+        &--upload {
+          color:$purpleDark;
+        }
+      }
+    }    
+  }
+  
+  @include breakpoint(lg) {
+    background: url($imageDir + "support-bg-1920.jpg") top -35px center no-repeat;
+  }
+
+  @include breakpoint(el) {   
+    background: url($imageDir + "support-bg-1920.jpg") top -5px center no-repeat;
+    &__list {
+      justify-content: center;
+      min-height: 540px;
+      margin-top: 30px;
+      &::before {
+        width: 440px;
+        height: 522px;
+        background: url($imageDir + "shield-1920.png") no-repeat;
+      }
+    }
+    &__item {
+      width: calc((100% - 480px)/2);
+      &-question {
+        font-size: 20px;
+        &-text {
+          max-width: 200px;
+        }
+      }
+      &-text {
+        font-size: 18px;
+        line-height: 120%;
+      }
+      &--upload {
+        margin-top: 80px;
+      }
+      &--usb {
+        margin-bottom: 80px;
+      }
+    }
+  }
+}

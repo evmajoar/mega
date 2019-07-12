@@ -1,0 +1,79 @@
+@import '../../helpers/variables';
+@import '../../helpers/mixins';
+
+
+.popup-request { 
+  display: none;
+  &--opened {
+    display: block;    
+  }  
+}
+
+.popup-request {
+  padding: 43px 20px 60px;
+    &__logo {
+      display: block;
+      margin: 0 auto;
+    }
+    &__logo-image {
+      display: block;
+      margin: 0 auto;
+    }
+  
+    &__close-button {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      width: 25px;
+      height: 25px;
+      &::before,
+      &::after {
+        @include pseudo;
+        top: 12px;
+        right: -5px;
+        width: 34px;
+        height: 1px;
+        background-color: #888888;
+        transition: all .3s ease-out;
+      }
+      &::before {
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+      &:active {
+        &::before,
+        &::after {
+          background-color: $teal;
+        }
+      }
+    }
+  
+    @include breakpoint(md) {
+      padding: 35px 80px 55px;
+      &__logo {
+        width: 142px;
+        height: 150px;
+        
+        &-image {
+          width: 100%;
+        }
+      }
+      &__close-button {
+        top: 35px;
+        right: 30px;
+        &:hover,
+        &:focus {
+          &::before,
+          &::after {
+            background-color: $teal;
+          }
+        }
+      }
+    }
+  
+    @include breakpoint(lg) {
+      padding: 35px 100px 65px;
+    }
+}
