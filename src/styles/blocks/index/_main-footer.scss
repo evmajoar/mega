@@ -3,114 +3,150 @@
 
 .main-footer {
   margin-top: auto;
-  background: $white;
-}
-
-//SOCIAL ===================
-.social {
-  display: flex;
-  align-items: center;
-
-  &__item {
-    margin-right: 20px;
-
-    &:last-child {
-      margin-right: 0;
+  padding: 38px 0 56px;
+  background-color: #0083B0;
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__logo {
+    display: block;
+    &-image {
+      display: block;
+      margin: 0 auto;
     }
-
   }
 
+  &__item {    
+    font-size: 16px;
+    color: $white;
+    &--links {
+      margin-top: 40px;
+    }
+    
+    &--social {
+      margin-top: 50px;
+    }
+  }
   &__link {
-
-    svg path {
-      transition: all .2s ease-in-out;
+    display: flex;
+    align-items: center;
+    color: inherit;
+    transition: all .3s ease-out;
+    &--phone {
+      margin-top: 10px;
+      font-family: $robotoCond;
     }
 
     &:active {
-
-      svg path {
-        fill: $white;
+      color: $teal;
+      & .main-footer__icon {
+        fill: $teal;
       }
-
     }
-
-    &:hover {
-
-      @include breakpoint(el) {
-
-        svg path {
-          fill: $white;
-        }
-
-      }
-
-    }
-
+  }
+  &__icon {
+    flex-shrink: 0;
+    margin-right: 15px;
+    fill: $white;
+    transition: all .3s ease-out;
   }
 
-}
-
-
-//MAP =====================
-.map {
-  height: 309px;
-  width: 100%;
-
-  @include breakpoint(el) {
-    height: 262px;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 55px;
+    font-size: 14px;
+    color: $white;
+    font-family: $montserrat;
   }
 
-}
+  &__dev-link {
+    color: inherit;
+    &:active .main-footer__dev-link-image {
+      fill: $teal;
+    }
+    &-image {
+      width: 97px; 
+      height: 21px;
+      fill: $white;
+      transition: all .3s ease-out;
+    }
+  }
 
-//COPY ====================
-.copy {
-  padding: 25px $gutter;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center;
+  &__copy {
+    margin-top: 15px;
+  }
+
 
   @include breakpoint(md) {
-    padding: 25px $gutter + 19px;
-  }
-
-  @include breakpoint(el) {
-    padding: 30px $gutter;
-  }
-
-  &__text {
-    font-size: 12px;
-    color: $white;
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-
-    @include breakpoint(el) {
-      font-size: 14px;
+    padding: 35px 0 42px;
+    &__list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
     }
-
-  }
-
-  &__development {
-
-    &:active {
-      > svg path {
-        fill: $white;
+    &__item {
+      width: calc((100% - 60px)/3);
+      margin-top: 0;      
+      &--links {
+        order: 1;
       }
     }
+    &__logo-image {
+      margin-left: 0;
+    }
 
-    @include breakpoint(el) {
-
-      svg path {
-        transition: all .2s ease-in-out;
-      }
-
-      &:hover {
-        > svg path {
-          fill: $white;
+    &__link {
+      &:hover,
+      &:focus {
+        color: $teal;
+        & .main-footer__icon {
+          fill: $teal;
         }
       }
     }
 
-  }
+    &__icon {
+      margin-left: auto;
+    }
 
+    &__dev-link {
+      color: inherit;
+      &:hover .main-footer__dev-link-image,
+      &:focus .main-footer__dev-link-image {
+        fill: $teal;
+      }
+      //&-image {
+        //width: 130px;
+        //height: 30px;
+      //} 
+    }
+    
+    &__wrapper {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 70px;
+    }
+    
+    &__dev {
+      order: 1;
+    }
+
+    &__copy {
+      margin-top: 0;
+    }
+  }
+  @include breakpoint (el) {
+    padding: 40px 0 40px;
+    &__wrapper {
+      margin-top: 70px;
+    }
+  }
 }
+

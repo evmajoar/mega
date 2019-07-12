@@ -1,0 +1,58 @@
+@import '../../helpers/variables';
+@import '../../helpers/mixins';
+
+.social {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 140px;
+    margin: 0 auto;
+  }
+  &__item {
+    :not(:last-of-type) {
+      margin-right: 10px;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    fill: $white;
+    transition: all .3s ease-out;
+  }
+
+  &__link {
+    &:active .social__icon {
+      fill: $teal;
+    }
+  }
+
+  @include breakpoint(md) {
+    &__link {
+      &:hover .social__icon,
+      &:focus .social__icon {
+        fill: $teal;
+      }
+    }
+  }
+
+  @include breakpoint(el) {
+    &__list {
+      max-width: 170px;
+    }
+    &__icon {
+      &--facebook {
+        width: 13px;
+        height: 25px;
+      }
+      &--instagram {
+        width: 25px;
+        height: 25px;
+      }
+      &--youtube {
+        width: 25px;
+        height: 17px;
+      }
+    }
+  }
+}
