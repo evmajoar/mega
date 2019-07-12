@@ -6,8 +6,7 @@
   padding-top: 60px;
   padding-bottom: 66px;
   background-color: $white;
-  background: url($imageDir + "support-bg.jpg") top 140px center no-repeat;
-  background-size: cover;
+  background: url($imageDir + "support-bg.jpg") top 160px center no-repeat;
   
   &__title {
     font-size: 20px; 
@@ -67,6 +66,16 @@
       flex-shrink: 0;
       fill: $teal;
     }
+  }
+
+  @media(min-width: 321px) {
+    background: url($imageDir + "support-bg-576.jpg") top 85px center no-repeat;
+  }
+  @media(min-width: 403px) {
+    background: url($imageDir + "support-bg-576.jpg") top 60px center no-repeat;
+  }
+  @media(min-width: 542px) {
+    background: url($imageDir + "support-bg-576.jpg") top 40px center no-repeat;
   }
 
   @include breakpoint(md) {
