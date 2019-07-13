@@ -231,7 +231,7 @@ function assemblySvgSprites() {
 /* RUN BUILD */
 exports.cleanDirectory = cleanDirectory;
 
-const build = gulp.series(cleanDirectory, gulp.parallel(
+const build = gulp.parallel(
   compileHTML,
   compileCSS,
   compileJS,
@@ -240,7 +240,7 @@ const build = gulp.series(cleanDirectory, gulp.parallel(
   optimizeImages,
   convertImagesToWebp,
   assemblySvgSprites,
-));
+);
 
 exports.build = build;
 

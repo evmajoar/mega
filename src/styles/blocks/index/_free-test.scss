@@ -3,6 +3,27 @@
 
 .free-test {
   padding: 45px 0;
+  background: $white;
+
+  .container {
+    max-width: 1060px;
+  }
+
+  &__subtitle {
+    display: block;
+  }
+
+  &__paragraph {
+    margin-top: 12px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    color: $purpleDark;
+    @include breakpoint(md) {
+      margin-top: 20px;
+      font-size: 24px;
+    }
+  }
 
   @include breakpoint(md) {
     padding: 55px 0;

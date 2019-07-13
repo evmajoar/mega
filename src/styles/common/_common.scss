@@ -29,8 +29,8 @@ body {
   display: flex;
   flex-direction: column;
   font: 400 16px/1.2 $raleway;
-  color: $black;
-  background: $white;
+  color: $purpleDark;
+  background: $blueDark;
   text-rendering: optimizeLegibility;
   animation: show 1.5s ease-in-out;
   min-width: 320px;
@@ -97,25 +97,4 @@ input[type=number]::-webkit-outer-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield;
-}
-
-.read-more {
-  color: #1C4F95;
-  text-transform: uppercase;
-  text-align: right;
-  font-weight: 600;
-  &:after{
-    @include pseudo;
-    @extend %-svg-icon-long-arrow-dims;
-  }
-  &__arrow{
-    margin-left: 12px;
-  }
-}
-
-.carousel-button{
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  border: 3px solid #054977;
 }

@@ -1,7 +1,6 @@
 @import '../../helpers/variables';
 @import '../../helpers/mixins';
 
-
 .facilities {
   position: relative;
   &::before {
@@ -38,7 +37,6 @@
 
   &__title {
     margin-top: 54px;
-    color: $white;
   }
 
   &__list {

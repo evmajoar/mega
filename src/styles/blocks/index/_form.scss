@@ -101,7 +101,7 @@
     }     
   }
 
-  @include breakpoint (sm) {
+  @include breakpoint(sm) {
     &__button {
       max-width: 300px;
       &--free-test {
@@ -161,6 +161,10 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
+        max-width: 100%;
+      }
+      &--subscribe {
+        margin-top: 0;
         max-width: 100%;
       }
     }

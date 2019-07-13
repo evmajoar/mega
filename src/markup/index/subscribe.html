@@ -1,19 +1,26 @@
 <section class="subscribe">
   <div class="subscribe__container container">
     <div class="subscribe__text-wrapper">
-      <h2 class="subscribe__title title">Подпишись на рассылку!</h2>
-      <p class="subscribe__text">Чтобы узнать еще больше о практических кейсах решения задач управленческого и финансового учета</p>
+      <h2 class="subscribe__title title visually-hidden">E-mail рассылка от MEGA Integration</h2>
+      <p class="subscribe__text">
+        <strong class="subscribe__subtitle">Подпишись на рассылку!</strong>
+        Чтобы узнать еще больше о практических кейсах решения задач управленческого и финансового учета
+      </p>
     </div>
     <div class="subscribe__wrapper">
       <p class="subscribe__action">Гарантированная скидка на первый месяц работы <span class="subscribe__percent">-15%</span></p>
       <form class="subscribe__form form" action="/" method="post">
-        <label class="form__label form__label">
-          <svg class="form__icon" width="18" height="18" viewBox="0 0 18 18">
-            <use xlink:href="icons/sprite.svg#icon-dog"></use>
-          </svg>
-          <span class="visually-hidden">Email</span>            
-          <input class="form__input form__input--subscribe" type="email" name="email" placeholder="Email">
-        </label>
+        <ul class="form__list form__list--subscribe">
+          <li class="form__item">
+            <label class="form__label form__label">
+              <svg class="form__icon" width="18" height="18" viewBox="0 0 18 18">
+                <use xlink:href="icons/sprite.svg#icon-dog"></use>
+              </svg>
+              <span class="visually-hidden">Email</span>
+              <input class="form__input form__input--subscribe" type="email" name="email" placeholder="Email" autocomplete="off">
+            </label>
+          </li>
+        </ul>
         <button class="form__button form__button--subscribe button" type="submit">
           <span class="button__helper"></span>
           Подписаться

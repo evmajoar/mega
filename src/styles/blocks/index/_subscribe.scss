@@ -8,10 +8,12 @@
   background: #F7F6F6 url($imageDir + "subscribe-bg.jpg") repeat repeat;
   background-size: contain;
 
-  &__title {
+  &__subtitle {
     font-weight: 700;
     font-size: 20px;
     text-align: center;
+    display: block;
+    margin-bottom: 12px;
   }
 
   &__text {
@@ -57,12 +59,12 @@
       min-width: 482px;
     }
 
-    &__title {
+    &__subtitle {
       font-size: 30px;
+      margin-bottom: 15px;
     }
 
     &__text {
-      margin-top: 15px;
       font-size: 24px;
     }
 
@@ -89,7 +91,7 @@
       margin-right: auto;      
     }
 
-    &__title,
+    &__subtitle,
     &__text {
       text-align: left;
       margin-left: 0;

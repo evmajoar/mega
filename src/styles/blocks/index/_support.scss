@@ -5,13 +5,12 @@
 .support {
   padding-top: 60px;
   padding-bottom: 66px;
-  background-color: $white;
+  background-color: $white !important;
   background: url($imageDir + "support-bg.jpg") top 160px center no-repeat;
   
   &__title {
     max-width: 276px;
     margin: 0 auto;
-    font-size: 20px; 
     line-height: 100%;
     text-align: center;
   }
@@ -85,12 +84,12 @@
   @media(min-width: 321px) {
     background: url($imageDir + "support-bg-321.jpg") top 45px center no-repeat;
   }
+
   @media(min-width: 403px) {
     background: url($imageDir + "support-bg-321.jpg") top 50px center no-repeat;
   }
 
-  @media(min-width: 577px) {    
-    
+  @media(min-width: 577px) {
     background: url($imageDir + "support-bg-576.jpg") top 30px center no-repeat;
     &__list {
       display: flex;
@@ -114,10 +113,9 @@
   }
 
   @include breakpoint(md) {
-    padding-bottom: 158px;
+    padding-bottom: 135px;
     background: url($imageDir + "support-bg-768.jpg") top 60px center no-repeat;
     &__title {
-      font-size: 48px;
       max-width: 656px;
       margin: 0 auto;
     }

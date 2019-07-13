@@ -14,8 +14,16 @@
   font-weight: 800;
   font-size: 25px;
   font-family: $montserrat;
+  color: $white;
   @include breakpoint(md) {
     font-size: 48px;
+  }
+  @include breakpoint(md) {
+    font-size: 48px;
+  }
+
+  &--black {
+    color: $purpleDark;
   }
 }
 
@@ -69,6 +77,27 @@
       }
     }
   }
+}
+
+.read-more {
+  color: #1C4F95;
+  text-transform: uppercase;
+  text-align: right;
+  font-weight: 600;
+  &:after{
+    @include pseudo;
+    @extend %-svg-icon-long-arrow-dims;
+  }
+  &__arrow{
+    margin-left: 12px;
+  }
+}
+
+.carousel-button{
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 3px solid #054977;
 }
 
 .has-error {

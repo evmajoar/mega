@@ -1,0 +1,20 @@
+@import '../../helpers/variables';
+@import '../../helpers/mixins';
+
+.examples {
+  background: $white;
+  padding: 88px 0 79px;
+
+  &__carousel {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    overflow-x: hidden;
+    margin-top: 40px;
+  }
+
+  &__item {
+    width: 100%;
+  }
+
+}

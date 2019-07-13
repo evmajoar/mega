@@ -18,12 +18,12 @@
     z-index: -1; 
   }
 
-  &__title {
-    font-weight: 800;
-    font-size: 25px;
-    font-family: $montserrat;
-    color: $white;    
-  }
+  //&__title {
+  //  font-weight: 800;
+  //  font-size: 25px;
+  //  font-family: $montserrat;
+  //  color: $white;
+  //}
 
   &__list {
     //max-width: 250px;
@@ -102,7 +102,6 @@
     
     &__title {
       max-width: 475px;
-      font-size: 48px;
       line-height: 100%;
     }
 
